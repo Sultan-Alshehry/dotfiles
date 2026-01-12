@@ -26,6 +26,7 @@ PS1="[\u \W] \$ "
 # export NVM_DIR="$HOME/.nvm"
 export EDITOR=nvim
 export VISUAL=nvim
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 bind -s 'set completion-ignore-case on'
