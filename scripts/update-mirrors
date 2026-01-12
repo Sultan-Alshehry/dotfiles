@@ -1,5 +1,0 @@
-#!/bin/bash
-
-/usr/sbin/cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
-/usr/bin/reflector --country Finland,Sweden,Norway,Estonia,Germany,France,Russia --latest 20 --fastest 10 --sort rate --save /etc/pacman.d/mirrorlist
-/usr/bin/pacman -Syy

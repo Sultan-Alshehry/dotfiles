@@ -1,2 +1,2 @@
 #!/bin/bash
-exec /usr/bin/steam -no-cef-sandbox -cef-disable-gpu "$@"
+exec /bin/steam -no-cef-sandbox -cef-disable-gpu "$@"
