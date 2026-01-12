@@ -102,7 +102,9 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
+
+bindsym $mod+space exec rofi -show combi
 
 # focus the parent container
 bindsym $mod+a focus parent
