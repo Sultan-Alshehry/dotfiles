@@ -1,0 +1,9 @@
+#!/bin/bash
+
+/usr/bin/mount /dev/sda /mnt/usb/
+/usr/bin/restic -r /mnt/usb/home-backup --password-file /home/sultan/notes/private/restic-password backup / \
+  --exclude-caches \
+  --exclude-file /home/sultan/Documents/scripts/exclude.txt
+restic forget --keep-last
+/usr/bin/sync
+/usr/bin/umount /dev/sda
