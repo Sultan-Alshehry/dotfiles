@@ -1,4 +1,4 @@
 #!/bin/bash
-/bin/pacman -Syu --noconfirm
-/sbin/yay -Syu --noconfirm
-/bin/pacman -R $(/bin/pacman -Qdtq) --noconfirm
+/usr/sbin/pacman -Syu --noconfirm
+/usr/sbin/yay -Syu --noconfirm
+/usr/sbin/pacman -R $(/bin/pacman -Qdtq) --noconfirm

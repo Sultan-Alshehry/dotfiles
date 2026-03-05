@@ -1,9 +1,23 @@
 #!/bin/bash
 
 /bin/mount /dev/sda /mnt/
-/bin/restic -r /mnt/home-backup --password-file /home/sultan/notes/private/restic-password backup / \
+
+if ! /bin/restic -r /mnt/home-backup \
+  --password-file /home/sultan/Documents/notes/private/keys/restic-password \
+  cat config >/dev/null 2>&1
+then
+  /bin/restic -r /mnt/home-backup \
+    --password-file /home/sultan/Documents/notes/private/keys/restic-password \
+    init
+fi
+
+/bin/restic -r /mnt/home-backup --password-file /home/sultan/Documents/notes/private/keys/restic-password backup / \
   --exclude-caches \
   --exclude-file /home/sultan/Documents/scripts/exclude.txt
-/bin/restic forget --keep-last 5
+
+/bin/restic -r /mnt/home-backup \
+  --password-file /home/sultan/Documents/notes/private/keys/restic-password \
+  forget --keep-last 5 --prune
+
 /bin/sync
 /bin/umount /dev/sda
