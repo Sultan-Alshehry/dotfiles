@@ -38,7 +38,11 @@ vim.pack.add({
     { src = "https://github.com/hrsh7th/cmp-buffer" },
     { src = "https://github.com/hrsh7th/cmp-path" },
     { src = "https://github.com/L3MON4D3/LuaSnip" },
+
+    { src = "https://github.com/windwp/nvim-autopairs" },
 })
+
+require('nvim-autopairs').setup()
 
 require("oil").setup()
 
